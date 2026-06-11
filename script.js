@@ -101,11 +101,8 @@ function renderLeaderboard(players) {
   leaderboardBody.replaceChildren();
 
   sortedTopTen.forEach((player, index) => {
-    const rank = index + 1;
-    const medal = medals[index];
-    const row = document.createElement("tr");
-    const rankCell = document.createElement("td");
-    rankCell.className = "rank";
+ const rankDisplay = `<span class="position">${String(rank).padStart(2, "0")}</span>`;
+rankCell.innerHTML = rankDisplay;
 
     if (medal) {
       rankCell.innerHTML = `<span class="medal ${medal.className}" role="img" aria-label="${medal.label}">${medal.icon}</span>`;
