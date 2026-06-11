@@ -124,9 +124,7 @@ leaderboardBody.appendChild(row);
 
 });
 
-if (!sortedTopTen.length)
-    showMessage("No leaderboard data available.");
-}
+if (!sortedTopTen.length) showMessage("No leaderboard data available.");
 }
 
 function showMessage(message) {
