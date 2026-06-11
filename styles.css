@@ -75,9 +75,41 @@ footer { width: min(1180px, calc(100% - 36px)); margin: 0 auto; padding: 22px 0;
 }
 
 .red-header {
-    color: #ff3333;
-    text-shadow:
-        0 0 5px #ff3333,
-        0 0 10px #ff3333,
-        0 0 20px #ff3333;
+  color: #ff3333;
+  text-shadow:
+    0 0 5px #ff3333,
+    0 0 10px #ff3333,
+    0 0 20px #ff3333;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:550px;
+    height:750px;
+    background:url(https://i.postimg.cc/tTphGzNG/Cristiano-Ronaldo-Al-Nassr-Football-Legend-Transparent-PNG-Image-removebg-preview.png) no-repeat center center;
+    background-size:contain;
+    transform:translate(-50%,-50%);
+
+    opacity:.28;
+    filter:blur(4px);
+
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+    linear-gradient(to right,
+        rgba(255,0,0,.25) 0%,
+        transparent 18%,
+        transparent 82%,
+        rgba(255,0,0,.25) 100%);
 }
