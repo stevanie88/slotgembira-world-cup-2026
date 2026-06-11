@@ -31,10 +31,11 @@ main { width: min(1040px, calc(100% - 36px)); margin: 0 auto; padding: 78px 0 70
 .eyebrow { display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--red); font-size: 9px; font-weight: 800; letter-spacing: .3em; }.eyebrow span { width: 28px; height: 2px; background: var(--red); }
 h1{
     font-family:'Anton',sans-serif;
-    font-size:clamp(40px,6vw,90px);
-    line-height:.85;
-    text-transform:uppercase;
+    font-size:clamp(35px,5vw,80px);
+    line-height:.88;
     text-align:center;
+    margin:20px auto 50px;
+}
 
     color:#fff;
 
