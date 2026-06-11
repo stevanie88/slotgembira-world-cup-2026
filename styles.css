@@ -30,19 +30,19 @@ main { width: min(1040px, calc(100% - 36px)); margin: 0 auto; padding: 78px 0 70
 .hero { text-align: center; }
 .eyebrow { display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--red); font-size: 9px; font-weight: 800; letter-spacing: .3em; }.eyebrow span { width: 28px; height: 2px; background: var(--red); }
 h1{
-    position:relative;
-    text-align:center;
     font-family:'Anton',sans-serif;
-    font-size:clamp(65px,8vw,130px);
+    font-size:clamp(40px,6vw,90px);
     line-height:.85;
+    text-transform:uppercase;
+    text-align:center;
+
     color:#fff;
 
     text-shadow:
         0 2px 0 #aaa,
         0 4px 0 #888,
-        0 8px 20px rgba(255,0,0,.7),
-        0 0 40px rgba(255,0,0,.5),
-        0 0 100px rgba(255,0,0,.3);
+        0 10px 20px rgba(255,0,0,.8),
+        0 0 40px rgba(255,0,0,.5);
 
     animation:pulseGlow 2s ease-in-out infinite alternate;
 }
