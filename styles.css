@@ -30,19 +30,29 @@ main { width: min(1040px, calc(100% - 36px)); margin: 0 auto; padding: 78px 0 70
 .hero { text-align: center; }
 .eyebrow { display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--red); font-size: 9px; font-weight: 800; letter-spacing: .3em; }.eyebrow span { width: 28px; height: 2px; background: var(--red); }
 h1{
-    font-family:'Anton',sans-serif;
-    font-size:clamp(60px,8vw,130px);
-    line-height:.88;
-    text-transform:uppercase;
-    text-align:center;
-    color:#fff;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #ff3333,
+    #ffd700,
+    #ffffff,
+    #ff3333
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbGlow 4s linear infinite;
 
-    text-shadow:
-        0 3px 0 #999,
-        0 6px 0 #666,
-        0 10px 25px rgba(255,0,0,.7),
-        0 0 60px rgba(255,0,0,.5),
-        0 0 120px rgba(255,0,0,.3);
+  text-shadow:
+    0 0 10px rgba(255,255,255,.9),
+    0 0 25px rgba(255,0,0,.9),
+    0 0 50px rgba(255,0,0,.7);
+}
+
+@keyframes rgbGlow{
+  0%{ background-position: 0% center; }
+  100%{ background-position: 300% center; }
 }
 .subtitle { max-width: 540px; margin: 0 auto; color: #ffffff; font-size: 11px; line-height: 1.8; }
 .summary { max-width: 700px; margin: 35px auto 55px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: rgba(7,7,7,.68); backdrop-filter: blur(10px); }
