@@ -54,6 +54,11 @@ h1{
   0%{ background-position: 0% center; }
   100%{ background-position: 300% center; }
 }
+
+@keyframes rgbGlow{
+  0%{ background-position: 0% center; }
+  100%{ background-position: 300% center; }
+}
 .subtitle { max-width: 540px; margin: 0 auto; color: #ffffff; font-size: 11px; line-height: 1.8; }
 .summary { max-width: 700px; margin: 35px auto 55px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: rgba(7,7,7,.68); backdrop-filter: blur(10px); }
 .summary div { padding: 15px 12px; border-right: 1px solid var(--line); }.summary div:last-child { border: 0; }
