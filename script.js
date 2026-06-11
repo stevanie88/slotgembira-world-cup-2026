@@ -100,28 +100,33 @@ function renderLeaderboard(players) {
 
   leaderboardBody.replaceChildren();
 
-  sortedTopTen.forEach((player, index) => {
- const rankDisplay = `<span class="position">${String(rank).padStart(2, "0")}</span>`;
+sortedTopTen.forEach((player, index) => {
+
+    const rank = index + 1;
+
+    const row = document.createElement("tr");
+
+    const rankCell = document.createElement("td");
+    rankCell.className = "rank";
+
+    const rankDisplay =
+        `<span class="position">${String(rank).padStart(2, "0")}</span>`;
+
 rankCell.innerHTML = rankDisplay;
 
-    if (medal) {
-      rankCell.innerHTML = `<span class="medal ${medal.className}" role="img" aria-label="${medal.label}">${medal.icon}</span>`;
-    } else {
-      const position = document.createElement("span");
-      position.className = "position";
-      position.textContent = String(rank).padStart(2, "0");
-      rankCell.appendChild(position);
-    }
+row.append(
+    rankCell,
+    createCell("username", player.username),
+    createCell("turnover", rupiah.format(player.turnover))
+);
 
-    row.append(
-      rankCell,
-      createCell("username", player.username),
-      createCell("turnover", rupiah.format(player.turnover))
-    );
-    leaderboardBody.appendChild(row);
-  });
+leaderboardBody.appendChild(row);
 
-  if (!sortedTopTen.length) showMessage("No leaderboard data available.");
+});
+
+if (!sortedTopTen.length)
+    showMessage("No leaderboard data available.");
+}
 }
 
 function showMessage(message) {
