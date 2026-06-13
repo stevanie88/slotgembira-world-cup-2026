@@ -166,3 +166,23 @@ async function updateLeaderboard() {
 showMessage("Loading leaderboard...");
 updateLeaderboard();
 setInterval(updateLeaderboard, REFRESH_INTERVAL);
+// Tanggal otomatis
+const months = [
+"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE",
+"JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"
+];
+
+function updateDate() {
+    const now = new Date();
+    const day = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+
+  document.getElementById("updated-time").setAttribute(
+    "data-date",
+    `${day} ${month} ${year} • ©${year} SLOTGEMBIRA • WORLD CUP 2026`
+);
+}
+
+updateDate();
+
