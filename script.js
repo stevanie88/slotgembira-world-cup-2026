@@ -150,11 +150,22 @@ async function updateLeaderboard() {
 );
     if (!response.ok) throw new Error(`CSV request failed with status ${response.status}.`);
 
-    renderLeaderboard(csvToPlayers(await response.text()));
-    updatedTime.textContent = new Date().toLocaleTimeString("id-ID", {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
+renderLeaderboard(csvToPlayers(await response.text()));
+
+const months = [
+"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE",
+"JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"
+];
+
+const now = new Date();
+const day = now.getDate();
+const month = months[now.getMonth()];
+const year = now.getFullYear();
+
+document.getElementById("updated-time").setAttribute(
+    "data-date",
+    `${day} ${month} ${year} • ©${year} SLOTGEMBIRA • WORLD CUP 2026`
+);
   } catch (error) {
     console.error("Unable to update leaderboard:", error);
     if (!leaderboardBody.children.length) showMessage("Unable to load leaderboard. Retrying shortly...");
@@ -166,23 +177,4 @@ async function updateLeaderboard() {
 showMessage("Loading leaderboard...");
 updateLeaderboard();
 setInterval(updateLeaderboard, REFRESH_INTERVAL);
-// Tanggal otomatis
-const months = [
-"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE",
-"JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"
-];
-
-function updateDate() {
-    const now = new Date();
-    const day = now.getDate();
-    const month = months[now.getMonth()];
-    const year = now.getFullYear();
-
-  document.getElementById("updated-time").setAttribute(
-    "data-date",
-    `${day} ${month} ${year} • ©${year} SLOTGEMBIRA • WORLD CUP 2026`
-);
-}
-
-updateDate();
 
