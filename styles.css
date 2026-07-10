@@ -72,18 +72,49 @@ th:last-child, td:last-child { text-align: right; }
 td { padding: 17px 30px; border-bottom: 1px solid rgba(255,255,255,.065); color: #aaa; font-size: 11px; transition: .2s; }
 tbody tr { background: transparent; transition: .2s; } tbody tr:hover { background: rgba(226,10,22,.07); }
 tbody tr:last-child td { border-bottom: 0; }
-.rank {
-    width: 150px;
-    font: 900 18px/1 var(--display);
-    color: #ff1a1a;
+.rank{
+    width:150px;
+    font:900 18px/1 var(--display);
+
+    background:linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffecec 20%,
+        #ff5b5b 55%,
+        #ff0000 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
     text-shadow:
-        0 0 5px #ff1a1a,
-        0 0 10px #ff1a1a,
-        0 0 20px rgba(255,0,0,.8);
+        0 0 5px rgba(255,255,255,.8),
+        0 0 12px rgba(255,0,0,.9),
+        0 0 25px rgba(255,0,0,.8);
 }
 .medal { width: 31px; height: 31px; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid currentColor; font-size: 16px; box-shadow: 0 0 20px rgba(255,255,255,.06); }
 .gold { color: var(--gold); background: rgba(216,174,88,.1); }.silver { color: var(--silver); background: rgba(170,174,181,.08); }.bronze { color: var(--bronze); background: rgba(165,106,58,.1); }
-.position { display: inline-block; min-width: 31px; text-align: center; }
+.position{
+    display:inline-block;
+    min-width:31px;
+    text-align:center;
+
+    background:linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffecec 20%,
+        #ff5b5b 55%,
+        #ff0000 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,.8),
+        0 0 12px rgba(255,0,0,.9),
+        0 0 25px rgba(255,0,0,.8);
+}
 .username { color: var(--white); font-weight: 700; letter-spacing: .08em; }.turnover { color: var(--gold); font-weight: 700; font-variant-numeric: tabular-nums; }
 .card-footer { min-height: 54px; padding: 0 30px; display: flex; align-items: center; justify-content: space-between; color: #555; background: #090909; border-top: 1px solid var(--line); font-size: 7px; text-transform: uppercase; letter-spacing: .14em; }.card-footer strong { color: var(--red); font-size: 8px; }
 
